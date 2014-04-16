@@ -1,0 +1,651 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PHP comparisions</title>
+<link href='//fonts.googleapis.com/css?family=Inconsolata&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<style>
+* {
+	font-size: 0.98em;
+}
+table {
+	border-collapse: collapse;
+}
+th, td {
+	margin: 0;
+	padding: 7px;
+	border: 1px solid #ddd;
+}
+th {
+	font-weight: normal;
+	background-color: #eee;
+}
+thead th:first-child {
+	border-left: 0;
+	border-top: 0;
+	background-color: transparent;
+}
+th, .code {
+	font-family: Inconsolata, monospace;
+	white-space: pre;
+}
+tbody th {
+	text-align: left;
+}
+td {
+	text-align: center;
+}
+span.true {
+	color: green;
+}
+span.false {
+	color: red;
+	opacity: 0.5;
+}
+.strict {
+	display: none;
+}
+.hi {
+	background-color: #ffa;
+}
+div {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none; 
+	-o-user-select: none; 
+	user-select: none;
+}
+td, div {
+	font-family: Roboto, sans-serif;
+}
+</style>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>''</th><th>null</th><th>false</th><th>true</th><th>0</th><th>'0'</th><th>-1</th><th>'-1'</th><th>array()</th><th>array(null)</th><th>array(false)</th><th>array(0)</th><th>array('0')</th>		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>if(...)</th>
+			<td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="true">&#x2713;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="false">&#x2717;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td>		</tr>
+		<tr>
+			<th>empty</th>
+			<td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="false">&#x2717;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="true">&#x2713;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td>		</tr>
+		<tr>
+			<th>is_null</th>
+			<td><span class="false">&#x2717;</span></td><td><span class="true">&#x2713;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td>		</tr>
+		<tr>
+			<th>is_numeric</th>
+			<td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="true">&#x2713;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td><td><span class="false">&#x2717;</span></td>		</tr>
+		<tr>
+			<th>intval</th>
+			<td class="code">0</td><td class="code">0</td><td class="code">0</td><td class="code">1</td><td class="code">0</td><td class="code">0</td><td class="code">-1</td><td class="code">-1</td><td class="code">0</td><td class="code">1</td><td class="code">1</td><td class="code">1</td><td class="code">1</td>		</tr>
+		<tr>
+					<th><span class="loose">== </span><span class="strict">===</span> ''</th>
+					<td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> null</th>
+					<td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> false</th>
+					<td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> true</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> 0</th>
+					<td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> '0'</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> -1</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> '-1'</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> array()</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> array(null)</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> array(false)</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> array(0)</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td></tr><tr>
+					<th><span class="loose">== </span><span class="strict">===</span> array('0')</th>
+					<td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="false">&#x2717;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="false">&#x2717;</span></span>
+						</td><td>
+							<span class="loose"><span class="true">&#x2713;</span></span>
+							<span class="strict"><span class="true">&#x2713;</span></span>
+						</td></tr>	</tbody>
+</table>
+<div style="user-select:none">
+	<label><input type="checkbox" id="strict"> strict comparisions</label>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>(function() {
+	$('#strict')
+		.on('change', function() {
+			$('.strict')[this.checked ? 'show' : 'hide']();
+			$('.loose')[this.checked ? 'hide' : 'show']();
+		})
+		.trigger('change')
+	;
+	function hiCell(cell, hi) {
+		var row = cell.parentNode.rowIndex, col = cell.cellIndex;
+		$('thead tr th').eq(col)[hi ? 'addClass' : 'removeClass']('hi');
+		$('tbody tr').eq(row - 1).find('th').eq(0)[hi ? 'addClass' : 'removeClass']('hi');
+		$(cell)[hi ? 'addClass' : 'removeClass']('hi');
+	}
+	$('td').on('mouseleave', function() {
+		hiCell(this, false);
+		
+	});
+	$('td').on('mouseenter', function() {
+		hiCell(this, true);
+	});
+})();
+</script>
+</body>
+</html>
