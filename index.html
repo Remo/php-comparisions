@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>PHP comparisions</title>
-<link href='//fonts.googleapis.com/css?family=Inconsolata&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Roboto&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Inconsolata&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <style>
 * {
 	font-size: 0.98em;
